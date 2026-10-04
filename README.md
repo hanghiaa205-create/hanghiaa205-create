@@ -80,7 +80,13 @@
                 <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-xl">
                     <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center overflow-hidden border-2 border-slate-800">
                         <span class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
-                            응
+                            응> <img src="
+" alt="Avatar">
+    > ```
+  </Step>
+
+  <Step subtitle="Bước 4" title="Lưu file và kiểm tra">
+</Steps>
                         </span>
                     </div>
                 </div>
