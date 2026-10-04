@@ -2,7 +2,6 @@
   <H1>으이아의 홈페이지</H1>
 </html>
 [응이아.html](https://github.com/user-attachments/files/33028070/default.html)
-<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
