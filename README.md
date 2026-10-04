@@ -1,7 +1,6 @@
 <html>
   <H1>으이아의 홈페이지</H1>
 </html>
-(https://github.com/user-attachments/files/33028070/default.html)
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
