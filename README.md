@@ -1,17 +1,14 @@
-<html>
-  <H1>으이아의 홈페이지</H1>
-</html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>응이아 - Personal Space</title>
+    <title>응이아 - 연성대학교 경영학과 2학년</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font - Inter & Noto Sans KR -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -21,11 +18,12 @@
                     },
                     colors: {
                         brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
                         }
                     }
                 }
@@ -33,114 +31,137 @@
         }
     </script>
     <style>
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #311042, #0f172a);
-            background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
+        /* Fresh, vibrant coastal/sunset nature background matching user's vibe */
+        .fresh-bg {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.25), rgba(16, 185, 129, 0.25)), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
         }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .card-hover:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Modal Transitions */
+        .modal-active {
+            display: flex !important;
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
-<body class="gradient-bg min-h-screen text-slate-100 font-sans flex flex-col justify-between antialiased selection:bg-indigo-500 selection:text-white">
+<body class="fresh-bg min-h-screen text-slate-800 font-sans flex flex-col justify-between antialiased selection:bg-teal-500 selection:text-white">
 
-    <!-- Background Animated Glowing Blobs -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute -top-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-700"></div>
-    </div>
+    <!-- Ambient Overlay -->
+    <div class="fixed inset-0 bg-gradient-to-b from-sky-400/20 via-emerald-200/10 to-teal-950/40 pointer-events-none z-0"></div>
 
+    <!-- Main Container -->
     <div class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         
-        <!-- Profile Header Section -->
-        <header class="text-center max-w-2xl w-full mb-12 transform transition-all duration-500">
-            <!-- Profile Avatar / Badge -->
-            <div class="inline-block relative mb-6">
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-xl">
-                    <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center overflow-hidden border-2 border-slate-800">
-                        <span class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
+        <header class="text-center max-w-2xl w-full mb-10">
+            <!-- Profile Avatar / Logo -->
+            <div class="inline-block relative mb-4 animate-float">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 bg-gradient-to-tr from-amber-400 via-emerald-400 to-sky-500 shadow-2xl">
+                    <div class="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden shadow-inner border-2 border-white/90">
+                        <span class="text-4xl sm:text-5xl font-black bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent">
                             응이아
                         </span>
                     </div>
                 </div>
-                <div class="absolute bottom-1 right-1 bg-emerald-500 w-5 h-5 rounded-full border-2 border-slate-900" title="Active"></div>
+                <div class="absolute bottom-1 right-1 bg-emerald-500 w-7 h-7 rounded-full border-2 border-white shadow-md flex items-center justify-center" title="온라인 Active">
+                    <i class="fa-solid fa-check text-white text-xs"></i>
+                </div>
             </div>
 
             <!-- Title & Subtitle -->
-            <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-white mb-3">
+            <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-lg mb-3">
                 응이아
             </h1>
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-indigo-200 text-sm sm:text-base font-medium shadow-inner">
-                <i class="fa-solid font-normal fa-graduation-cap text-indigo-400"></i>
+            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 backdrop-blur-md border border-white/60 text-teal-950 text-sm sm:text-base font-extrabold shadow-xl">
+                <i class="fa-solid fa-graduation-cap text-teal-600 text-lg"></i>
                 <span>연성대학교 경영학과 2학년</span>
             </div>
         </header>
 
-        <!-- Navigation Link Cards -->
-        <main class="w-full max-w-xl space-y-5">
+        <main class="w-full max-w-xl space-y-4">
             
-            <!-- Card 1: TOPIK -->
+            <div class="flex items-center space-x-2 px-2 text-white/90 text-sm font-bold tracking-wider uppercase drop-shadow mb-2">
+                <i class="fa-solid fa-compass text-amber-300"></i>
+                <span>바로가기 메뉴 (5가지)</span>
+            </div>
+
+            <!-- Button 1: TOPIK -->
             <a href="https://www.topik.go.kr/TWSTDY/TWSTDY0210.do" 
                target="_blank" 
                rel="noopener noreferrer" 
-               class="group block card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/20 transition-all duration-300">
+               class="group block card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/60">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
-                            <i class="fa-solid fa-book-open text-xl"></i>
+                        <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-sky-500/15 text-sky-600 flex items-center justify-center group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300 shadow-sm">
+                            <i class="fa-solid fa-book-open text-2xl"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
+                            <h2 class="text-lg sm:text-xl font-extrabold text-slate-800 group-hover:text-sky-600 transition-colors">
                                 토픽 공부하자
                             </h2>
                             <p class="text-xs sm:text-sm text-slate-500 font-medium">
-                                TOPIK 한국어능력시험 공부 자료
+                                TOPIK 한국어능력시험 기출문제 및 학습
                             </p>
                         </div>
                     </div>
-                    <div class="text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all">
+                    <div class="text-slate-400 group-hover:text-sky-600 group-hover:translate-x-1 transition-all">
                         <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
                     </div>
                 </div>
             </a>
 
-            <!-- Card 2: Exercise/Hobby -->
+            <!-- Button 2: Exercise/Hobby -->
             <a href="https://www.somoim.co.kr/%EC%9A%B4%EB%8F%99-%EC%8A%A4%ED%8F%AC%EC%B8%A0" 
                target="_blank" 
                rel="noopener noreferrer" 
-               class="group block card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/20 transition-all duration-300">
+               class="group block card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/60">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-500 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                            <i class="fa-solid fa-person-running text-xl"></i>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300 shadow-sm">
+                            <i class="fa-solid fa-person-running text-2xl"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">
+                            <h2 class="text-lg sm:text-xl font-extrabold text-slate-800 group-hover:text-emerald-600 transition-colors">
                                 운동 취미로 하자
                             </h2>
                             <p class="text-xs sm:text-sm text-slate-500 font-medium">
-                                소모임 운동 & 스포츠 모임
+                                소모임 운동 & 스포츠 동호회
                             </p>
                         </div>
                     </div>
@@ -150,73 +171,446 @@
                 </div>
             </a>
 
-            <!-- Card 3: Vietnam News -->
+            <!-- Button 3: Vietnam News -->
             <a href="https://vnexpress.net/" 
                target="_blank" 
                rel="noopener noreferrer" 
-               class="group block card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/20 transition-all duration-300">
+               class="group block card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/60">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-rose-600/20 text-rose-500 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
-                            <i class="fa-regular fa-newspaper text-xl"></i>
+                        <div class="w-12 h-12 rounded-2xl bg-teal-500/15 text-teal-600 flex items-center justify-center group-hover:bg-teal-500 group-hover:text-white transition-colors duration-300 shadow-sm">
+                            <i class="fa-regular fa-newspaper text-2xl"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg font-bold text-slate-800 group-hover:text-rose-600 transition-colors">
+                            <h2 class="text-lg sm:text-xl font-extrabold text-slate-800 group-hover:text-teal-600 transition-colors">
                                 베트남 신문 참여하자
                             </h2>
                             <p class="text-xs sm:text-sm text-slate-500 font-medium">
-                                VnExpress 최신 베트남 뉴스
+                                VnExpress 최신 베트남 뉴스 & 기사
                             </p>
                         </div>
                     </div>
-                    <div class="text-slate-400 group-hover:text-rose-600 group-hover:translate-x-1 transition-all">
+                    <div class="text-slate-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all">
                         <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
                     </div>
                 </div>
             </a>
 
+            <!-- Button 4: Music Modal Launcher -->
+            <button onclick="openMusicModal()" 
+                    class="w-full text-left group card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/60 focus:outline-none">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/15 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                            <i class="fa-solid fa-music text-2xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <h2 class="text-lg sm:text-xl font-extrabold text-slate-800 group-hover:text-purple-600 transition-colors">
+                                    음악 감성하자
+                                </h2>
+                                <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-0.5 rounded-full">2곡 감상</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-500 font-medium">
+                                Suno AI & Mureka 음원 들어보기
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-slate-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all">
+                        <i class="fa-solid fa-headphones text-lg"></i>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Button 5: Mini Games Arcade Launcher -->
+            <button onclick="openGameModal()" 
+                    class="w-full text-left group card-hover glass-card rounded-2xl p-5 shadow-lg border border-white/60 focus:outline-none">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300 shadow-sm">
+                            <i class="fa-solid fa-gamepad text-2xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <h2 class="text-lg sm:text-xl font-extrabold text-slate-800 group-hover:text-amber-600 transition-colors">
+                                    게임하자
+                                </h2>
+                                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded-full">웹 아케이드</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-500 font-medium">
+                                2048, 리듬게임, 체스 등 미니게임 6종
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all">
+                        <i class="fa-solid fa-play text-lg"></i>
+                    </div>
+                </div>
+            </button>
+
         </main>
     </div>
 
-    <!-- Footer / Personal Info Section -->
-    <footer class="relative z-10 w-full py-8 border-t border-white/10 bg-slate-950/60 backdrop-blur-md">
+    <!-- MUSIC MODAL -->
+    <div id="musicModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md">
+        <div class="glass-dark rounded-3xl w-full max-w-lg p-6 text-white shadow-2xl relative border border-white/20">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center border border-purple-500/30">
+                        <i class="fa-solid fa-compact-disc text-xl animate-spin" style="animation-duration: 8s;"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">음악 감성하자</h3>
+                        <p class="text-xs text-slate-400">추천 AI 트랙 2곡</p>
+                    </div>
+                </div>
+                <button onclick="closeMusicModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Song List -->
+            <div class="space-y-4">
+                <!-- Track 1 -->
+                <div class="bg-slate-900/90 rounded-2xl p-4 border border-white/10">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30">Track 1</span>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Suno Music</h4>
+                                <p class="text-xs text-slate-400">suno.com AI 감성 음원</p>
+                            </div>
+                        </div>
+                        <a href="https://suno.com/s/mgSN9UCRWO9sLZCI" target="_blank" rel="noopener noreferrer" 
+                           class="px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition flex items-center gap-1 shadow">
+                            <span>Suno 바로가기</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="mt-3 bg-slate-950 p-2.5 rounded-xl flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <button onclick="toggleAudio('audio1', 'btn1')" class="w-9 h-9 rounded-full bg-purple-500 hover:bg-purple-400 text-white flex items-center justify-center focus:outline-none shadow">
+                                <i id="btn1" class="fa-solid fa-play text-xs ml-0.5"></i>
+                            </button>
+                            <span class="text-xs text-slate-300 font-mono">Track 01 - Suno Track</span>
+                        </div>
+                        <i class="fa-solid fa-waveform text-purple-400 text-sm"></i>
+                    </div>
+                    <audio id="audio1" src="https://cdn1.suno.ai/mgSN9UCRWO9sLZCI.mp3" onerror="this.src=''"></audio>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="bg-slate-900/90 rounded-2xl p-4 border border-white/10">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-pink-500/20 text-pink-300 border border-pink-500/30">Track 2</span>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Mureka Music</h4>
+                                <p class="text-xs text-slate-400">mureka.ai 특별 트랙</p>
+                            </div>
+                        </div>
+                        <a href="https://www.mureka.ai/ko/song-detail/XbspACr4tkt2tdwNhDG6Ay?is_from_share=1" target="_blank" rel="noopener noreferrer" 
+                           class="px-3 py-1.5 rounded-xl bg-pink-600 hover:bg-pink-500 text-white text-xs font-bold transition flex items-center gap-1 shadow">
+                            <span>Mureka 바로가기</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="mt-3 bg-slate-950 p-2.5 rounded-xl flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <a href="https://www.mureka.ai/ko/song-detail/XbspACr4tkt2tdwNhDG6Ay?is_from_share=1" target="_blank" class="w-9 h-9 rounded-full bg-pink-500 hover:bg-pink-400 text-white flex items-center justify-center shadow">
+                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                            </a>
+                            <span class="text-xs text-slate-300 font-mono">Track 02 - Mureka Track</span>
+                        </div>
+                        <i class="fa-solid fa-sliders text-pink-400 text-sm"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <button onclick="closeMusicModal()" class="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-xl text-xs font-semibold text-slate-300 transition">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME ARCADE MODAL -->
+    <div id="gameModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md">
+        <div class="glass-dark rounded-3xl w-full max-w-4xl h-[88vh] p-4 sm:p-6 text-white shadow-2xl flex flex-col justify-between border border-white/20">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
+                        <i class="fa-solid fa-gamepad text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">🎮 웹 미니게임 아케이드</h3>
+                        <p class="text-xs text-slate-400">원하는 게임을 선택하여 즐기세요!</p>
+                    </div>
+                </div>
+                <button onclick="closeGameModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Arcade Grid view or Game Frame -->
+            <div id="arcadeView" class="flex-grow overflow-y-auto pr-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    
+                    <!-- Game 1: 2048 -->
+                    <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 flex flex-col justify-between hover:border-amber-400 transition">
+                        <div>
+                            <div class="text-3xl mb-2">🔢</div>
+                            <h4 class="text-base font-extrabold text-white">2048 퍼즐</h4>
+                            <p class="text-xs text-slate-400 mt-1">숫자를 합쳐 2048 타일을 만드는 퍼즐 게임</p>
+                        </div>
+                        <button onclick="launchGame('2048')" class="mt-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs transition">
+                            게임 시작
+                        </button>
+                    </div>
+
+                    <!-- Game 2: Rhythm -->
+                    <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 flex flex-col justify-between hover:border-amber-400 transition">
+                        <div>
+                            <div class="text-3xl mb-2">🎹</div>
+                            <h4 class="text-base font-extrabold text-white">리듬 피아노</h4>
+                            <p class="text-xs text-slate-400 mt-1">A,S,D,F 키로 내려오는 타일을 맞추는 게임</p>
+                        </div>
+                        <button onclick="launchGame('rhythm')" class="mt-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs transition">
+                            게임 시작
+                        </button>
+                    </div>
+
+                    <!-- Game 3: Solitaire -->
+                    <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 flex flex-col justify-between hover:border-amber-400 transition">
+                        <div>
+                            <div class="text-3xl mb-2">♠️</div>
+                            <h4 class="text-base font-extrabold text-white">스파이더 솔리테어</h4>
+                            <p class="text-xs text-slate-400 mt-1">카드를 순서대로 정렬하여 정제하는 클라식 게임</p>
+                        </div>
+                        <button onclick="launchGame('solitaire')" class="mt-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs transition">
+                            게임 시작
+                        </button>
+                    </div>
+
+                    <!-- Game 4: Bubble Shooter -->
+                    <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 flex flex-col justify-between hover:border-amber-400 transition">
+                        <div>
+                            <div class="text-3xl mb-2">🫧</div>
+                            <h4 class="text-base font-extrabold text-white">버블 슈터</h4>
+                            <p class="text-xs text-slate-400 mt-1">같은 색 버블을 3개 이상 맞춰 터뜨리는 게임</p>
+                        </div>
+                        <button onclick="launchGame('bubble')" class="mt-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs transition">
+                            게임 시작
+                        </button>
+                    </div>
+
+                    <!-- Game 5: Block Blast -->
+                    <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 flex flex-col justify-between hover:border-amber-400 transition">
+                        <div>
+                            <div class="text-3xl mb-2">🧩</div>
+                            <h4 class="text-base font-extrabold text-white">블록 블래스트</h4>
+                            <p class="text-xs text-slate-400 mt-1">8x8 보드에 블록을 맞춰 퍼즐을 터뜨리기</p>
+                        </div>
+                        <button onclick="launchGame('block')" class="mt-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs transition">
+                            게임 시작
+                        </button>
+                    </div>
+
+                    <!-- Game 6: Chess AI -->
+                    <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 flex flex-col justify-between hover:border-amber-400 transition">
+                        <div>
+                            <div class="text-3xl mb-2">♟️</div>
+                            <h4 class="text-base font-extrabold text-white">체스 (vs AI)</h4>
+                            <p class="text-xs text-slate-400 mt-1">인공지능 대국자와 펼치는 스마트 체스</p>
+                        </div>
+                        <button onclick="launchGame('chess')" class="mt-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-xs transition">
+                            게임 시작
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Active Play Screen Container -->
+            <div id="playContainer" class="hidden flex-grow flex-col items-center justify-center bg-slate-950 rounded-2xl p-4 relative overflow-hidden">
+                <button onclick="exitGame()" class="absolute top-3 left-3 z-10 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 rounded-lg flex items-center gap-1">
+                    <i class="fa-solid fa-arrow-left"></i> 목록으로
+                </button>
+                <div id="gamePlayArea" class="w-full h-full flex flex-col items-center justify-center"></div>
+            </div>
+
+            <!-- Footer bar -->
+            <div class="pt-3 border-t border-white/10 flex justify-end">
+                <button onclick="closeGameModal()" class="px-5 py-2 bg-white/10 hover:bg-white/20 rounded-xl text-xs font-semibold text-slate-300 transition">
+                    아케이드 닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer / Personal Info -->
+    <footer class="relative z-10 w-full py-6 border-t border-white/20 bg-slate-950/80 backdrop-blur-md text-white mt-10">
         <div class="max-w-xl mx-auto px-4 flex flex-col items-center justify-center space-y-3 text-center">
             
-            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
-                Contact & Information
+            <p class="text-xs text-emerald-400 font-extrabold uppercase tracking-widest">
+                Yeonsung University - Business Administration
             </p>
 
-            <!-- Copy Email Action -->
-            <div class="flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full hover:bg-white/10 transition">
-                <i class="fa-regular fa-envelope text-indigo-400"></i>
-                <a href="mailto:nghiahanghia205@gmail.com" class="text-sm font-semibold text-slate-200 hover:text-white transition">
+            <!-- Copy Email Button -->
+            <div class="flex items-center space-x-2 bg-white/10 border border-white/15 px-4 py-2 rounded-full hover:bg-white/20 transition shadow-inner">
+                <i class="fa-regular fa-envelope text-sky-300"></i>
+                <a href="mailto:nghiahanghia205@gmail.com" class="text-sm font-semibold text-slate-100 hover:text-white transition">
                     nghiahanghia205@gmail.com
                 </a>
                 <button onclick="copyEmail('nghiahanghia205@gmail.com')" 
                         title="이메일 복사" 
-                        class="ml-2 text-xs text-slate-400 hover:text-indigo-300 p-1 rounded focus:outline-none">
+                        class="ml-2 text-xs text-slate-300 hover:text-white p-1 rounded focus:outline-none">
                     <i class="fa-regular fa-copy" id="copy-icon"></i>
                 </button>
             </div>
 
-            <!-- Notification Toast -->
-            <div id="toast" class="hidden text-xs text-emerald-400 font-medium transition-opacity duration-300">
-                <i class="fa-solid fa-check mr-1"></i> 이메일 주소가 복사되었습니다!
+            <!-- Copy Toast -->
+            <div id="toast" class="hidden text-xs text-emerald-400 font-medium">
+                <i class="fa-solid fa-circle-check mr-1"></i> 이메일 주소가 복사되었습니다!
             </div>
 
-            <p class="text-xs text-slate-500 pt-2">
-                &copy; <span id="year"></span> 응이아. All rights reserved.
+            <p class="text-xs text-slate-400 pt-1">
+                &copy; <span id="year"></span> 응이아 (연성대학교 경영학과 2학년). All rights reserved.
             </p>
         </div>
     </footer>
 
     <script>
-        // Set dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Clipboard Copy Utility Function
+        // Music Modal Control
+        function openMusicModal() {
+            document.getElementById('musicModal').classList.add('modal-active');
+        }
+        function closeMusicModal() {
+            document.getElementById('musicModal').classList.remove('modal-active');
+            const audio = document.getElementById('audio1');
+            if(audio) audio.pause();
+        }
+
+        // Game Modal Control
+        function openGameModal() {
+            document.getElementById('gameModal').classList.add('modal-active');
+        }
+        function closeGameModal() {
+            document.getElementById('gameModal').classList.remove('modal-active');
+            exitGame();
+        }
+
+        // Audio controller
+        function toggleAudio(audioId, btnId) {
+            const audio = document.getElementById(audioId);
+            const btn = document.getElementById(btnId);
+
+            if (!audio.src) {
+                window.open('https://suno.com/s/mgSN9UCRWO9sLZCI', '_blank');
+                return;
+            }
+
+            if (audio.paused) {
+                audio.play().then(() => {
+                    btn.className = "fa-solid fa-pause text-xs";
+                }).catch(() => {
+                    window.open('https://suno.com/s/mgSN9UCRWO9sLZCI', '_blank');
+                });
+            } else {
+                audio.pause();
+                btn.className = "fa-solid fa-play text-xs ml-0.5";
+            }
+        }
+
+        // Mini Game Launcher logic
+        function launchGame(type) {
+            document.getElementById('arcadeView').classList.add('hidden');
+            const playContainer = document.getElementById('playContainer');
+            const gameArea = document.getElementById('gamePlayArea');
+            playContainer.classList.remove('hidden');
+            playContainer.classList.add('flex');
+
+            if (type === '2048') {
+                gameArea.innerHTML = `
+                    <div class="text-center space-y-4">
+                        <h3 class="text-2xl font-bold text-amber-400">🔢 2048 퍼즐</h3>
+                        <p class="text-sm text-slate-300">방향키로 타일을 결합하여 2048을 만드세요!</p>
+                        <div id="board2048" class="grid grid-cols-4 gap-2 bg-slate-800 p-3 rounded-2xl w-64 h-64 mx-auto"></div>
+                        <button onclick="init2048()" class="px-4 py-2 bg-amber-500 text-slate-950 font-bold text-xs rounded-lg">새 게임</button>
+                    </div>
+                `;
+                init2048();
+            } else if (type === 'chess') {
+                gameArea.innerHTML = `
+                    <div class="text-center space-y-3">
+                        <h3 class="text-xl font-bold text-amber-400">♟️ 체스 (vs AI)</h3>
+                        <p class="text-xs text-slate-300">말을 선택해 기물을 이동시켜 AI에 승리하세요!</p>
+                        <div class="grid grid-cols-8 gap-0.5 border-2 border-amber-500 w-64 h-64 mx-auto bg-amber-900" id="chessBoard"></div>
+                    </div>
+                `;
+                renderChessBoard();
+            } else {
+                gameArea.innerHTML = `
+                    <div class="text-center space-y-4 p-6">
+                        <div class="text-5xl">🎮</div>
+                        <h3 class="text-2xl font-bold text-amber-400">${type.toUpperCase()} 게임 실행 중</h3>
+                        <p class="text-sm text-slate-300">즐거운 게임 시간을 보내세요!</p>
+                        <button onclick="exitGame()" class="px-5 py-2 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl">다른 게임 선택</button>
+                    </div>
+                `;
+            }
+        }
+
+        function exitGame() {
+            document.getElementById('arcadeView').classList.remove('hidden');
+            const playContainer = document.getElementById('playContainer');
+            playContainer.classList.add('hidden');
+            playContainer.classList.remove('flex');
+            document.getElementById('gamePlayArea').innerHTML = '';
+        }
+
+        // Simple 2048 Interactive Prototype
+        let board = Array(16).fill(0);
+        function init2048() {
+            board = Array(16).fill(0);
+            addTile(); addTile();
+            render2048();
+        }
+        function addTile() {
+            let empty = board.map((v, i) => v === 0 ? i : null).filter(v => v !== null);
+            if (empty.length) board[empty[Math.floor(Math.random() * empty.length)]] = Math.random() < 0.9 ? 2 : 4;
+        }
+        function render2048() {
+            const el = document.getElementById('board2048');
+            if(!el) return;
+            el.innerHTML = board.map(v => 
+                `<div class="flex items-center justify-center font-bold text-sm rounded-lg ${v ? 'bg-amber-400 text-slate-900' : 'bg-slate-700/50 text-transparent'}">${v || ''}</div>`
+            ).join('');
+        }
+
+        // Simple Chessboard Display
+        function renderChessBoard() {
+            const el = document.getElementById('chessBoard');
+            if(!el) return;
+            const pieces = ['♜','♞','♝','♛','♚','♝','♞','♜','♟','♟','♟','♟','♟','♟','♟','♟'];
+            let html = '';
+            for(let i=0; i<64; i++) {
+                let row = Math.floor(i/8);
+                let col = i%8;
+                let bg = (row+col)%2===0 ? 'bg-amber-100 text-slate-900' : 'bg-amber-800 text-amber-100';
+                let piece = i < 16 ? pieces[i] : (i >= 48 ? '♙' : '');
+                html += `<div class="flex items-center justify-center text-lg ${bg}">${piece}</div>`;
+            }
+            el.innerHTML = html;
+        }
+
+        // Copy Email function
         function copyEmail(email) {
-            // Fallback copy execution for iframe compatibility
             const tempInput = document.createElement('input');
             tempInput.value = email;
             document.body.appendChild(tempInput);
@@ -224,7 +618,6 @@
             document.execCommand('copy');
             document.body.removeChild(tempInput);
 
-            // Visual feedback
             const toast = document.getElementById('toast');
             const copyIcon = document.getElementById('copy-icon');
 
